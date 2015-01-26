@@ -1,0 +1,42 @@
+{% load admin_static %}{% load firstof from future %}<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE|default:"en-us" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+<head>
+<title>{% block title %}{% endblock %}</title>
+<link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,600' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "site_flow/stylesheet_yumstat.css" %}{% endblock %}" />
+{% block extrastyle %}{% endblock %}
+<!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="{% block stylesheet_ie %}{% static "admin/css/ie.css" %}{% endblock %}" /><![endif]-->
+{% if LANGUAGE_BIDI %}<link rel="stylesheet" type="text/css" href="{% block stylesheet_rtl %}{% static "admin/css/rtl.css" %}{% endblock %}" />{% endif %}
+<script type="text/javascript">window.__admin_media_prefix__ = "{% filter escapejs %}{% static "admin/" %}{% endfilter %}";</script>
+<script type="text/javascript">window.__admin_utc_offset__ = "{% filter escapejs %}{% now "Z" %}{% endfilter %}";</script>
+{% block extrahead %}{% endblock %}
+{% block blockbots %}<meta name="robots" content="NONE,NOARCHIVE" />{% endblock %}
+</head>
+{% load i18n %}
+<body>
+	<nav>
+		<ul>
+			<li><fix_small_space></li>
+			<li><a href="{% url 'site_flow:index' %}"><div id="logo_rect"><img src = "{% static "site_flow/yumstat_logo.png" %}" height="40" width="auto" alt="Yumstat: An app to track baby's solid foods"></div></a></li>
+			<li><fix_med_space></li>
+			<li><div id="rect">about</div></li>
+			<li><fix_med_space><fix_small_space></li>
+			<li><div id="rect">FAQ</div></li>
+		</ul>
+	</nav>
+	<br />
+	<big_space>The world is full of <b>flavor</b>
+	<br />
+	<br />
+	<br />
+	<br />
+	<big_space><big_space><big_space>Help your baby <b>explore</b> it
+	<br />
+	<ul>
+		<li><big_space></li>
+		<li><a href="{% url 'simple:home' %}"><div id="nav_rect">sign in</div></a></li>
+		<!--<li><big_space></li>-->
+		<!--<li><div id="nav_rect">sign up</div></li>-->
+	</ul>
+</body>
+</html>
