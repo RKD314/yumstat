@@ -1,0 +1,21 @@
+The site pages/structure are in the 'site_flow' application.
+
+	index:	this is the home page. Links to:
+		The login application ('simple')
+		The about page
+		The FAQ page
+
+	about:	see above
+
+	FAQ:	see above
+
+
+The login functionality is handled in the 'simple' application.
+
+	login:	gives user page is login is fine
+		gives login_error page if login has an error
+
+
+Data analysis algorithms are in the 'yumstat' application.
+
+	none so far
