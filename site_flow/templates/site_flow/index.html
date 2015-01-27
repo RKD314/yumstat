@@ -1,7 +1,7 @@
 {% load admin_static %}{% load firstof from future %}<!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE|default:"en-us" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
 <head>
-<title>{% block title %}{% endblock %}</title>
+<title>{% block title %}yumstat: discover a world of flavor{% endblock %}</title>
 <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,600' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "site_flow/stylesheet_yumstat.css" %}{% endblock %}" />
 {% block extrastyle %}{% endblock %}
@@ -34,7 +34,10 @@
 	<br />
 	<ul>
 		<li><big_space></li>
-		<li><a href="{% url 'simple:home' %}"><div id="nav_rect">sign in</div></a></li>
+		<li><a href="{% url 'simple:login' %}"><div id="nav_rect">sign in with facebook 
+													<small_space>
+													<div id="fb_box"><small_space></div>
+											   </div></a></li>
 		<!--<li><big_space></li>-->
 		<!--<li><div id="nav_rect">sign up</div></li>-->
 	</ul>
